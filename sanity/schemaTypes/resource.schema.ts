@@ -1,22 +1,22 @@
-import { validation } from "sanity";
+
 
 const schema = {
   name: 'resource',
   title: 'Resource',
   type:  'document',
-  field: [
+  fields: [
     {
       name: 'title',
       title: 'Title',
       type: 'string',
-      require,
+      
       validation: (Rule: any) => Rule.required()
     },
     {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
-      option: { source: 'title' }
+      options: { source: 'title' }
     },
     {
       name: 'downloadlink',
@@ -36,7 +36,7 @@ const schema = {
       type: 'image',
       validation: (Rule: any) => Rule.required(),
       options: {
-        hotpot: true,
+        hotspot: true,
       }
     },
     {
@@ -50,3 +50,5 @@ const schema = {
     }
   ]
 }
+
+export default schema;
