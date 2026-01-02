@@ -1,9 +1,9 @@
 import React from 'react'
 
-import Footer from '@/components/footer'
-import Navbar from '@/components/navbar'
+import Footer from '@/components/Footer'
+import Navbar from '@/components/Navbar'
 
-const layout = ({ children}: {children: React.ReactNode}) => {
+/* const layout = ({ children}: {children: React.ReactNode}) => {
   return (
     <>
     <Navbar/>
@@ -11,6 +11,18 @@ const layout = ({ children}: {children: React.ReactNode}) => {
     <Footer />
     </>
   )
-}
+} */
+
+  const layout = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <div className="min-h-screen bg-black-100"> {/* Added background & min-height */}
+      <Navbar />
+      <main > {/* This pushes content down so it's not under the navbar */}
+        {children}
+      </main>
+      <Footer />
+    </div>
+  )
+} 
 
 export default layout
