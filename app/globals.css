@@ -16,6 +16,11 @@
 }
 
 @layer utilities {
+
+  .gradient_blue-purple {
+    background: linear-gradient(90deg, #4ca5ff 0%, #b573f8 100%);
+  }
+
   /* Banner Utility */
   .bg-banner {
     background-image: var(--background-image-banner);
@@ -27,7 +32,7 @@
   /* Layout Utilities */
   .flex-center { @apply flex justify-center items-center; }
   .flex-between { @apply flex justify-between items-center; }
-  .nav-padding { @apply pt-[98px]; }
+  .nav-padding { @apply pt-24.5; }
 
   /* Typography */
   .text-gradient_blue-purple {
@@ -39,7 +44,7 @@
 
   .heading1 { @apply text-[64px] leading-[67.2px] font-bold; }
   .heading2 { @apply text-[48px] leading-[50.4px] font-bold; }
-  .body-text { @apply text-[16px] leading-[22px] font-normal; }
+  .body-text { @apply text-[16px] leading-5.5 font-normal; }
 }
 
 /* Base Styles */
