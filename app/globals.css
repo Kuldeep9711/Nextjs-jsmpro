@@ -1,4 +1,4 @@
-@import "tailwindcss";
+ @import "tailwindcss";
 
 @theme {
   /* Colors */
@@ -16,6 +16,10 @@
 }
 
 @layer utilities {
+
+  .paddings {
+  @apply sm:px-16 px-8 py-12 w-full;
+}
 
   .gradient_blue-purple {
     background: linear-gradient(90deg, #4ca5ff 0%, #b573f8 100%);
@@ -51,4 +55,4 @@
 body {
   @apply bg-black-100 text-white font-poppins;
   margin: 0;
-}
+} 

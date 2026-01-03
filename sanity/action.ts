@@ -7,6 +7,9 @@ interface GetResourcesParams {
     category: string;
     page: string;
 }
+
+
+
  export const getResources = async (params: GetResourcesParams) => {
     const { query, category, page } = params;
 
@@ -21,7 +24,7 @@ interface GetResourcesParams {
        title,
        _id,
        downloadLink,
-       "image": poster.assest->url,
+       "image": poster.asset->url,
        views,
        slug,
        category
@@ -32,4 +35,4 @@ interface GetResourcesParams {
    } catch (error){
     console.log(error)
    }
- }
+ }  
