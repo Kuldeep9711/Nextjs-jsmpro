@@ -3,36 +3,39 @@ import { readClient } from "./lib/client";
 import { buildQuery } from "./utils";
 
 interface GetResourcesParams {
-    query: string;
-    category: string;
-    page: string;
+  query: string;
+  category: string;
+  page: number;
 }
 
-
-
- export const getResources = async (params: GetResourcesParams) => {
-    const { query, category, page } = params;
-
-   try {
+export const getResources = async ({
+  query,
+  category,
+  page,
+}: GetResourcesParams) => {
+  try {
     const resources = await readClient.fetch(
       groq`${buildQuery({
-        type: 'resource',
+        type: "resource",
         query,
         category,
-        page: parseInt(page),
+        page,
       })}{
-       title,
-       _id,
-       downloadLink,
-       "image": poster.asset->url,
-       views,
-       slug,
-       category
+        _id,
+        title,
+        downloadlink,
+        "image": poster.asset->url,
+        views,
+        slug,
+        category
       }`
-    )
+    );
 
-    return resources;
-   } catch (error){
-    console.log(error)
-   }
- }  
+    console.log("SANITY RESOURCES 👉", resources);
+
+    return resources ?? [];
+  } catch (error) {
+    console.error("SANITY ERROR 👉", error);
+    return [];
+  }
+};

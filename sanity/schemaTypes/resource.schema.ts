@@ -20,7 +20,7 @@ const schema = {
     },
     {
       name: 'downloadlink',
-      title: 'Downloadlink',
+      title: 'Download link',
       type: 'url',
       validation: (Rule: any) => Rule.required()
     },

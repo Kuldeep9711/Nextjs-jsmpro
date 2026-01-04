@@ -10,9 +10,10 @@ const page = async () => {
   const resources = await getResources({
        query: '',
        category: '',
-       page: '1'
+       page: 1,
   })
 
+  
   return (
    <main className="flex-center paddings mx-auto w-full max-w-screen-2xl flex-col">
     <section className='nav-padding w-full'>
@@ -26,19 +27,20 @@ const page = async () => {
    < Filters/>
 
    <section className="flex-center mt-6 w-full flex-col sm:mt-20">
-      Header 
-
-      <div className="mt-12 flex w-full flex-wrap justify-center gap-16 sm:justify-start ">
-          {resources?.length > 0 ? (
+      <h2 className='text-2xl font-semibold mb-6'>Header</h2>
+       
+      
+      <div className=" mt-12 flex w-full flex-wrap justify-center gap-16 sm:justify-start">
+         {resources && resources.length > 0 ? (
             resources.map((resource: any) => (
-              <ResourceCard 
+             <ResourceCard 
                key={resource._id}
               title={resource.title}
               id={resource._id}
               image={resource.image}
               downloadNumber={resource.views}
-              downloadLink={resource.downloadLink}
-              />
+              downloadlink={resource.downloadlink}
+              /> 
             ))
           ): (
             <p className="body-regular text-white-400">
@@ -47,9 +49,13 @@ const page = async () => {
           )} 
 
       </div>
+
+
    </section> 
   </main> 
   )
 }
 
 export default page  
+
+//

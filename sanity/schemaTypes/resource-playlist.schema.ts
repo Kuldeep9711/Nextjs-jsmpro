@@ -7,16 +7,18 @@ const schema = {
             name: 'title',
             title: 'Title',
             type: 'string',
-            validation: (Rule: any) => Rule.required()
+            validation: (Rule: any) => Rule.required(),
         },
         {
             name: 'resources',
             title: 'Resources',
             type: 'array',
             of: [
-                { type: 'reference', to: [{ type: 'resource' }]}
-            ]
-        }
+                { type: 'reference',
+                 to: [{ type: 'resource' }]
+                },
+            ],
+        },
     ]
 }
 

@@ -13,10 +13,10 @@ interface Props {
     title: string;
     image: string;
     downloadNumber: number;
-    downloadLink: string;
+    downloadlink: string;
 }
 
-const ResourceCard = ({ id, title, image, downloadNumber, downloadLink }:Props) => {
+const ResourceCard = ({ id, title, image, downloadNumber, downloadlink }:Props) => {
   return (
    <Card className="w-87.5 border bg-card text-card-foreground">
   <CardHeader>
